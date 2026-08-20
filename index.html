@@ -479,12 +479,16 @@
             <input type="text" id="name" name="Name" required>
           </div>
           <div class="field">
-            <label for="phone">Phone or Email</label>
-            <input type="text" id="phone" name="Contact Info" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone" required>
           </div>
         </div>
 
         <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
           <div class="field">
             <label for="brand">Brand</label>
             <select id="brand" name="Brand" required>
@@ -496,13 +500,13 @@
               <option>Other / Tablet</option>
             </select>
           </div>
+        </div>
+
+        <div class="form-row">
           <div class="field">
             <label for="model">Model</label>
             <input type="text" id="model" name="Model" placeholder="e.g. iPhone 14 Pro, 256GB" required>
           </div>
-        </div>
-
-        <div class="form-row">
           <div class="field">
             <label for="grade">Estimated Condition</label>
             <select id="grade" name="Estimated Grade" required>
@@ -515,20 +519,21 @@
               <option>Not Sure</option>
             </select>
           </div>
-          <div class="field">
-            <label for="interest">I'm Interested In</label>
-            <select id="interest" name="Interest" required>
-              <option value="">Select one</option>
-              <option>Selling for Cash</option>
-              <option>Trading In Toward a Purchase</option>
-              <option>Not Sure Yet</option>
-            </select>
-          </div>
+        </div>
+
+        <div class="field">
+          <label for="interest">I'm Interested In</label>
+          <select id="interest" name="Interest" required>
+            <option value="">Select one</option>
+            <option>Selling for Cash</option>
+            <option>Trading In Toward a Purchase</option>
+            <option>Not Sure Yet</option>
+          </select>
         </div>
 
         <div class="field">
           <label for="notes">Additional Details</label>
-          <textarea id="notes" name="Notes" placeholder="Storage size, carrier, any damage, accessories included, etc."></textarea>
+          <textarea id="notes" name="Notes" placeholder="Storage size, carrier, any damage, accessories included, etc." required></textarea>
         </div>
 
         <button type="submit" class="btn btn-black btn-block">Request My Quote</button>
@@ -558,9 +563,14 @@
           <input type="text" id="contact-name" name="Name" required>
         </div>
         <div class="field">
-          <label for="contact-info">Phone or Email</label>
-          <input type="text" id="contact-info" name="Contact Info" required>
+          <label for="contact-phone">Phone Number</label>
+          <input type="tel" id="contact-phone" name="Phone" required>
         </div>
+      </div>
+
+      <div class="field">
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="Email" required>
       </div>
 
       <div class="field">
