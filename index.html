@@ -229,6 +229,10 @@
   .sell-steps h4 { margin-bottom: 4px; }
   .sell-steps p { color: var(--text-muted); font-size: 0.92rem; }
 
+  .contact-form {
+    max-width: 620px;
+    margin: 0 auto;
+  }
   form.quote-form {
     background: var(--navy);
     border: 1px solid var(--border);
@@ -557,7 +561,43 @@
   </div>
 </section>
 
-<footer id="contact">
+<section id="contact" class="contact-us">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">General Inquiries</div>
+      <h2>Contact us</h2>
+      <p class="lead">Questions about a device, an order, or anything else? Send us a message and we'll get back to you.</p>
+    </div>
+
+    <form class="quote-form contact-form" action="https://formsubmit.co/sales@apexmobilegroup.com" method="POST">
+      <input type="hidden" name="_subject" value="New Contact Us Message — Apex Mobile Group">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hidden-honey" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <div class="field">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="contact-info">Phone or Email</label>
+          <input type="text" id="contact-info" name="Contact Info" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="Message" placeholder="Tell us what you need help with" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      <p class="form-note">We typically respond within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
   <div class="container" style="padding-top:70px;">
     <div class="footer-brand">
       <img src="logo-full-transparent.png" alt="Apex Mobile Group" class="footer-logo">
