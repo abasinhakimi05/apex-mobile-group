@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apex Mobile Group | Buy, Sell &amp; Trade iPhones &amp; Samsung Phones</title>
 <meta name="description" content="Apex Mobile Group buys and sells new and used iPhones, Samsung, and all major phone brands — Grade A to E. Get a fast cash quote or shop certified pre-owned phones.">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -103,10 +104,8 @@
   }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
   .logo-mark {
-    width: 34px; height: 34px; border-radius: 9px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.68rem; letter-spacing: 0.01em; font-weight: 800; color: #fff;
+    height: 34px; width: auto;
+    object-fit: contain;
   }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.15s ease; }
@@ -275,18 +274,13 @@
   }
   .footer-brand {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
+    justify-content: center;
     margin-bottom: 40px;
   }
-  .footer-brand-name {
-    font-weight: 800;
-    font-size: 0.95rem;
-    letter-spacing: 0.16em;
-    text-align: center;
-    line-height: 1.5;
-    color: var(--text-light);
+  .footer-logo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
   }
   .cta-band {
     background: linear-gradient(135deg, var(--blue), var(--cyan));
@@ -308,7 +302,7 @@
 <header>
   <nav>
     <a href="#top" class="logo">
-      <span class="logo-mark">AMG</span>
+      <img src="logo-icon.png" alt="Apex Mobile Group" class="logo-mark">
       Apex Mobile Group
     </a>
     <ul class="nav-links" id="navLinks">
@@ -566,8 +560,7 @@
 <footer id="contact">
   <div class="container" style="padding-top:70px;">
     <div class="footer-brand">
-      <span class="logo-mark" style="width:52px;height:52px;font-size:0.95rem;border-radius:14px;">AMG</span>
-      <span class="footer-brand-name">APEX MOBILE<br>GROUP</span>
+      <img src="logo-full-transparent.png" alt="Apex Mobile Group" class="footer-logo">
     </div>
 
     <div class="cta-band">
