@@ -6,54 +6,54 @@
 <title>Apex Mobile Group | Buy, Sell &amp; Trade iPhones &amp; Samsung Phones</title>
 <meta name="description" content="Apex Mobile Group buys and sells new and used iPhones, Samsung, and all major phone brands — Grade A to E. Get a fast cash quote or shop certified pre-owned phones.">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy-dark: #0a0f1e;
-    --navy: #10182c;
-    --navy-light: #1a2440;
-    --blue: #2f6bff;
-    --cyan: #35d8e0;
-    --text-light: #f4f6fb;
-    --text-muted: #9aa5c0;
-    --text-dark: #101528;
-    --border: #263156;
-    --success: #29c76f;
-    --warn: #ffb84d;
-    --danger: #ff5c5c;
+    --black: #1d1d1f;
+    --off-black: #000000;
+    --white: #ffffff;
+    --off-white: #f5f5f7;
+    --gray-line: #d2d2d7;
+    --text-muted: #6e6e73;
+    --text-muted-dark: rgba(255,255,255,0.62);
+    --line-dark: rgba(255,255,255,0.16);
+    --accent: #2f6bff;
+    --danger: #ff3b30;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background: var(--navy-dark);
-    color: var(--text-light);
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; }
   img { max-width: 100%; display: block; }
-  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 90px 0; }
-  h1, h2, h3, h4 { font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
-  h2 { font-size: 2.1rem; margin-bottom: 14px; }
-  h3 { font-size: 1.25rem; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 100px 0; }
+  h1, h2, h3, h4 { font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+  h2 { font-size: 2.25rem; margin-bottom: 16px; }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+  h4 { font-size: 1.02rem; font-weight: 600; }
   p.lead {
     color: var(--text-muted);
-    max-width: 640px;
-    font-size: 1.05rem;
+    max-width: 600px;
+    font-size: 1.1rem;
+    font-weight: 400;
   }
+  .on-dark p.lead { color: var(--text-muted-dark); }
   .eyebrow {
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--cyan);
-    margin-bottom: 14px;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 16px;
   }
-  .section-head { text-align: center; margin: 0 auto 50px; }
+  .on-dark .eyebrow { color: var(--text-muted-dark); }
+  .section-head { text-align: center; margin: 0 auto 56px; }
   .section-head p.lead { margin: 0 auto; text-align: center; }
 
   /* Buttons */
@@ -62,241 +62,202 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-weight: 700;
+    padding: 13px 28px;
+    border-radius: 980px;
+    font-weight: 500;
     font-size: 0.98rem;
     text-decoration: none;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease;
   }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(47,107,255,0.35);
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(47,107,255,0.45); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--text-light);
-    border: 1.5px solid var(--border);
-  }
-  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
   .btn-block { width: 100%; }
+  .btn-black { background: var(--black); color: var(--white); }
+  .btn-black:hover { opacity: 0.82; }
+  .btn-outline-dark { background: transparent; border-color: var(--black); color: var(--black); }
+  .btn-outline-dark:hover { background: var(--black); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--black); }
+  .btn-white:hover { opacity: 0.82; }
+  .btn-outline-light { background: transparent; border-color: rgba(255,255,255,0.5); color: var(--white); }
+  .btn-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
   /* Nav */
   header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--gray-line);
   }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
-    max-width: 1140px;
+    padding: 14px 24px;
+    max-width: 1100px;
     margin: 0 auto;
   }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
-  .logo-mark {
-    height: 34px; width: auto;
-    object-fit: contain;
-  }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.15s ease; }
-  .nav-links a:hover { color: var(--text-light); }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.05rem; text-decoration: none; letter-spacing: -0.01em; }
+  .logo-mark { height: 30px; width: auto; object-fit: contain; }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--black); font-weight: 400; font-size: 0.92rem; opacity: 0.75; transition: opacity 0.15s ease; }
+  .nav-links a:hover { opacity: 1; }
   .nav-cta { display: flex; align-items: center; gap: 14px; }
-  .nav-toggle { display: none; background: none; border: none; color: var(--text-light); font-size: 1.6rem; cursor: pointer; }
+  .nav-toggle { display: none; background: none; border: none; color: var(--black); font-size: 1.5rem; cursor: pointer; }
 
   @media (max-width: 860px) {
-    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); display: none; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; gap: 0; border-bottom: 1px solid var(--gray-line); display: none; }
     .nav-links.open { display: flex; }
-    .nav-links a { display: block; padding: 16px 24px; border-top: 1px solid var(--border); }
+    .nav-links a { display: block; padding: 16px 24px; border-top: 1px solid var(--gray-line); opacity: 1; }
     .nav-toggle { display: block; }
-    .nav-cta .btn-ghost { display: none; }
+    .nav-cta .btn { display: none; }
   }
 
   /* Hero */
   .hero {
-    padding: 100px 0 80px;
-    background:
-      radial-gradient(circle at 15% 20%, rgba(47,107,255,0.25), transparent 45%),
-      radial-gradient(circle at 85% 10%, rgba(53,216,224,0.18), transparent 40%),
-      var(--navy-dark);
+    padding: 96px 0 88px;
+    background: var(--off-black);
+    color: var(--white);
     text-align: center;
   }
+  .hero .logo-mark-hero { height: 56px; width: auto; margin: 0 auto 32px; }
   .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.3rem, 4.4vw, 3.4rem);
     max-width: 780px;
     margin: 0 auto 20px;
+    font-weight: 600;
   }
-  .hero h1 span { background: linear-gradient(135deg, var(--blue), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero .actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-  .badges { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 56px; color: var(--text-muted); font-size: 0.9rem; }
-  .badges span { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-  .badges b { color: var(--cyan); font-size: 1.1rem; }
+  .hero p.lead { margin: 0 auto; text-align: center; color: var(--text-muted-dark); }
+  .hero .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  .stat-row { display: flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-top: 64px; }
+  .stat-row .stat { padding: 0 32px; border-left: 1px solid var(--line-dark); text-align: left; }
+  .stat-row .stat:first-child { border-left: none; }
+  .stat-row .stat b { display: block; font-size: 1.3rem; font-weight: 600; }
+  .stat-row .stat span { font-size: 0.85rem; color: var(--text-muted-dark); }
+  @media (max-width: 640px) {
+    .stat-row { flex-direction: column; align-items: center; gap: 20px; }
+    .stat-row .stat { border-left: none; text-align: center; padding: 0; }
+  }
 
   /* Services */
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
   @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
-  .card {
-    background: var(--navy);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-  .card:hover { border-color: var(--cyan); transform: translateY(-4px); }
-  .card .icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; margin-bottom: 18px;
-  }
-  .card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 8px; }
+  .card { background: var(--off-white); padding: 40px 32px; }
+  .card .icon { width: 26px; height: 26px; margin-bottom: 22px; color: var(--black); }
+  .card .icon svg { width: 100%; height: 100%; }
+  .card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; }
 
   /* Grading */
-  .grading { background: var(--navy); }
-  .grade-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .grading { background: var(--off-white); }
+  .grade-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
   @media (max-width: 960px) { .grade-row { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .grade-row { grid-template-columns: 1fr; } }
-  .grade-card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px 20px;
-    text-align: center;
-  }
+  .grade-card { background: var(--white); padding: 28px 22px; text-align: left; }
   .grade-letter {
-    width: 46px; height: 46px; border-radius: 50%;
+    width: 40px; height: 40px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 1.2rem; margin: 0 auto 14px;
+    font-weight: 600; font-size: 1.05rem; margin-bottom: 16px;
   }
-  .grade-A .grade-letter { background: rgba(41,199,111,0.15); color: var(--success); }
-  .grade-B .grade-letter { background: rgba(53,216,224,0.15); color: var(--cyan); }
-  .grade-C .grade-letter { background: rgba(255,184,77,0.15); color: var(--warn); }
-  .grade-D .grade-letter { background: rgba(255,140,66,0.15); color: #ff8c42; }
-  .grade-E .grade-letter { background: rgba(255,92,92,0.15); color: var(--danger); }
-  .grade-card h4 { font-size: 1rem; margin-bottom: 8px; }
-  .grade-card p { font-size: 0.85rem; color: var(--text-muted); }
+  .grade-A .grade-letter { background: #1d1d1f; color: #fff; }
+  .grade-B .grade-letter { background: #48484a; color: #fff; }
+  .grade-C .grade-letter { background: #86868b; color: #fff; }
+  .grade-D .grade-letter { background: #d2d2d7; color: #1d1d1f; }
+  .grade-E .grade-letter { background: #fff; color: var(--danger); border: 1.5px solid var(--danger); }
+  .grade-card h4 { font-size: 1rem; margin-bottom: 6px; }
+  .grade-card p { font-size: 0.88rem; color: var(--text-muted); }
 
   /* Why us */
-  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
   @media (max-width: 860px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
-  .why-item { text-align: center; padding: 20px; }
-  .why-item .icon {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--navy-light); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; margin: 0 auto 16px;
-  }
+  .why-item { text-align: left; }
+  .why-item .icon { width: 24px; height: 24px; margin-bottom: 18px; color: var(--black); }
+  .why-item .icon svg { width: 100%; height: 100%; }
+  .why-item p { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; }
 
   /* Devices */
-  .devices { background: var(--navy); }
-  .device-chip-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .devices { background: var(--off-black); color: var(--white); }
+  .device-chip-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   .device-chip {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
+    border: 1px solid var(--line-dark);
     border-radius: 999px;
-    padding: 12px 22px;
-    font-weight: 600;
-    font-size: 0.92rem;
-    color: var(--text-muted);
+    padding: 11px 20px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
   }
 
   /* Sell Form */
   .sell-wrap {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 50px;
+    gap: 60px;
     align-items: start;
   }
   @media (max-width: 900px) { .sell-wrap { grid-template-columns: 1fr; } }
-  .sell-steps { list-style: none; margin-top: 28px; }
-  .sell-steps li { display: flex; gap: 16px; margin-bottom: 26px; }
+  .sell-steps { list-style: none; margin-top: 32px; }
+  .sell-steps li { display: flex; gap: 16px; margin-bottom: 28px; }
   .step-num {
-    flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--gray-line);
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 0.95rem;
+    font-weight: 600; font-size: 0.88rem;
   }
   .sell-steps h4 { margin-bottom: 4px; }
   .sell-steps p { color: var(--text-muted); font-size: 0.92rem; }
 
-  .contact-form {
-    max-width: 620px;
-    margin: 0 auto;
-  }
+  .contact-form { max-width: 620px; margin: 0 auto; }
   form.quote-form {
-    background: var(--navy);
-    border: 1px solid var(--border);
-    border-radius: 18px;
+    background: var(--white);
+    border: 1px solid var(--gray-line);
+    border-radius: 12px;
     padding: 36px;
   }
+  .contact-us { background: var(--off-white); }
+  .contact-us form.quote-form { background: var(--white); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
   .field { margin-bottom: 18px; }
-  .field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); }
+  .field label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; color: var(--black); }
   .field input, .field select, .field textarea {
     width: 100%;
-    background: var(--navy-dark);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 13px 14px;
-    color: var(--text-light);
+    background: var(--white);
+    border: 1px solid var(--gray-line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--black);
     font-family: inherit;
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.15s ease;
   }
-  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cyan); }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
   .field textarea { resize: vertical; min-height: 90px; }
   .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 14px; text-align: center; }
 
-  /* Contact / Footer */
-  footer { background: var(--navy); border-top: 1px solid var(--border); }
+  /* Footer */
+  footer { background: var(--off-black); color: var(--white); }
+  .footer-cta { text-align: center; padding-bottom: 80px; border-bottom: 1px solid var(--line-dark); margin-bottom: 60px; }
+  .footer-cta h2 { color: var(--white); margin-bottom: 10px; }
+  .footer-cta p { color: var(--text-muted-dark); max-width: 480px; margin: 0 auto 28px; }
   .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
   @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-item h4 { margin-bottom: 8px; color: var(--cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .contact-item p, .contact-item a { color: var(--text-muted); text-decoration: none; font-size: 0.98rem; }
+  .contact-item h4 { margin-bottom: 10px; color: var(--white); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+  .contact-item p, .contact-item a { color: var(--text-muted-dark); text-decoration: none; font-size: 0.96rem; }
   .footer-bottom {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--line-dark);
     padding-top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    color: var(--text-muted-dark);
+    font-size: 0.82rem;
   }
-  .footer-brand {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-  .footer-logo {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-  }
-  .cta-band {
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    border-radius: 20px;
-    padding: 50px;
-    text-align: center;
-    margin-bottom: 70px;
-  }
-  .cta-band h2 { color: #fff; margin-bottom: 10px; }
-  .cta-band p { color: rgba(255,255,255,0.9); max-width: 520px; margin: 0 auto 26px; }
-  .cta-band .btn-primary { background: #fff; color: var(--navy-dark); box-shadow: none; }
-  .cta-band .btn-primary:hover { background: #fff; }
+  .footer-brand { display: flex; justify-content: center; margin-bottom: 56px; }
+  .footer-logo { width: 100%; max-width: 200px; height: auto; }
 
   .hidden-honey { position: absolute; left: -9999px; }
 </style>
@@ -317,25 +278,26 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="#sell" class="btn btn-ghost">Get a Quote</a>
+      <a href="#sell" class="btn btn-outline-dark">Get a Quote</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
     </div>
   </nav>
 </header>
 
-<section class="hero" id="top">
+<section class="hero on-dark" id="top">
   <div class="container">
+    <img src="logo-icon.png" alt="" class="logo-mark-hero">
     <div class="eyebrow">Buy &middot; Sell &middot; Trade</div>
-    <h1>New &amp; used <span>iPhones, Samsung</span> &amp; every grade of phone, A to E</h1>
-    <p class="lead" style="margin:0 auto; text-align:center;">Apex Mobile Group makes buying, selling, and trading in phones simple. Certified grading, fair cash offers, and a full lineup of tested devices &mdash; every grade, every budget.</p>
+    <h1>New &amp; used iPhones, Samsung &amp; every grade of phone, A to E</h1>
+    <p class="lead">Apex Mobile Group makes buying, selling, and trading in phones simple. Certified grading, fair cash offers, and a full lineup of tested devices.</p>
     <div class="actions">
-      <a href="#sell" class="btn btn-primary">Get My Cash Offer</a>
-      <a href="#devices" class="btn btn-ghost">Browse Devices</a>
+      <a href="#sell" class="btn btn-white">Get My Cash Offer</a>
+      <a href="#devices" class="btn btn-outline-light">Browse Devices</a>
     </div>
-    <div class="badges">
-      <span><b>A&ndash;E</b> Grading Standard</span>
-      <span><b>24hr</b> Quote Turnaround</span>
-      <span><b>100%</b> Tested &amp; Verified</span>
+    <div class="stat-row">
+      <div class="stat"><b>A&ndash;E</b><span>Grading Standard</span></div>
+      <div class="stat"><b>24hr</b><span>Quote Turnaround</span></div>
+      <div class="stat"><b>100%</b><span>Tested &amp; Verified</span></div>
     </div>
   </div>
 </section>
@@ -344,22 +306,28 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">What We Do</div>
-      <h2>One shop for buying, selling &amp; trading</h2>
+      <h2>Buy, sell, and trade &mdash; all in one place</h2>
       <p class="lead">Whether you're upgrading, cashing out an old device, or hunting for a deal, Apex Mobile Group handles the whole process.</p>
     </div>
     <div class="grid-3">
       <div class="card">
-        <div class="icon">&#128241;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"></line></svg>
+        </div>
         <h3>Buy New &amp; Used Phones</h3>
         <p>Shop iPhones, Samsung Galaxy, and more across every condition grade &mdash; from brand new to budget-friendly Grade C/D devices, all fully tested before sale.</p>
       </div>
       <div class="card">
-        <div class="icon">&#128176;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="3"></circle></svg>
+        </div>
         <h3>Sell Your Phone</h3>
         <p>Get a fast, fair cash offer for your current device. Submit your phone's details online and we'll respond with a quote within 24 hours.</p>
       </div>
       <div class="card">
-        <div class="icon">&#128260;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+        </div>
         <h3>Trade-In &amp; Upgrade</h3>
         <p>Put your old phone's value toward your next one. We'll appraise your trade-in and apply it directly to a new or upgraded device.</p>
       </div>
@@ -412,30 +380,38 @@
     </div>
     <div class="why-grid">
       <div class="why-item">
-        <div class="icon">&#9989;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
         <h4>Transparent Grading</h4>
-        <p style="color:var(--text-muted); font-size:0.9rem;">No surprises &mdash; every phone is graded and disclosed upfront.</p>
+        <p>No surprises &mdash; every phone is graded and disclosed upfront.</p>
       </div>
       <div class="why-item">
-        <div class="icon">&#9889;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
         <h4>Fast Payouts</h4>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Quoted within 24 hours, paid promptly once your device is verified.</p>
+        <p>Quoted within 24 hours, paid promptly once your device is verified.</p>
       </div>
       <div class="why-item">
-        <div class="icon">&#128737;&#65039;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
         <h4>Every Phone Tested</h4>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Full functional inspection before anything goes up for sale.</p>
+        <p>Full functional inspection before anything goes up for sale.</p>
       </div>
       <div class="why-item">
-        <div class="icon">&#128179;</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        </div>
         <h4>Fair Market Pricing</h4>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Competitive offers and prices based on real market value.</p>
+        <p>Competitive offers and prices based on real market value.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="devices" id="devices">
+<section class="devices on-dark" id="devices">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">In Stock &amp; Wanted</div>
@@ -556,7 +532,7 @@
           <textarea id="notes" name="Notes" placeholder="Storage size, carrier, any damage, accessories included, etc."></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Request My Quote</button>
+        <button type="submit" class="btn btn-black btn-block">Request My Quote</button>
         <p class="form-note">We typically respond within 24 hours. No obligation to sell.</p>
       </form>
     </div>
@@ -593,22 +569,22 @@
         <textarea id="contact-message" name="Message" placeholder="Tell us what you need help with" required></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      <button type="submit" class="btn btn-black btn-block">Send Message</button>
       <p class="form-note">We typically respond within 24 hours.</p>
     </form>
   </div>
 </section>
 
 <footer>
-  <div class="container" style="padding-top:70px;">
+  <div class="container" style="padding-top:80px;">
     <div class="footer-brand">
       <img src="logo-full-transparent.png" alt="Apex Mobile Group" class="footer-logo">
     </div>
 
-    <div class="cta-band">
+    <div class="footer-cta">
       <h2>Ready to buy, sell, or trade?</h2>
       <p>Reach out and the Apex Mobile Group team will get back to you fast.</p>
-      <a href="#sell" class="btn btn-primary">Get Started</a>
+      <a href="#sell" class="btn btn-white">Get Started</a>
     </div>
 
     <div class="contact-grid">
