@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Mobile Group | Buy, Sell &amp; Trade iPhones &amp; Samsung Phones</title>
+<meta name="description" content="Apex Mobile Group buys and sells new and used iPhones, Samsung, and all major phone brands — Grade A to E. Get a fast cash quote or shop certified pre-owned phones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-dark: #0a0f1e;
+    --navy: #10182c;
+    --navy-light: #1a2440;
+    --blue: #2f6bff;
+    --cyan: #35d8e0;
+    --text-light: #f4f6fb;
+    --text-muted: #9aa5c0;
+    --text-dark: #101528;
+    --border: #263156;
+    --success: #29c76f;
+    --warn: #ffb84d;
+    --danger: #ff5c5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: var(--navy-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 90px 0; }
+  h1, h2, h3, h4 { font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+  h2 { font-size: 2.1rem; margin-bottom: 14px; }
+  h3 { font-size: 1.25rem; }
+  p.lead {
+    color: var(--text-muted);
+    max-width: 640px;
+    font-size: 1.05rem;
+  }
+  .eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 14px;
+  }
+  .section-head { text-align: center; margin: 0 auto 50px; }
+  .section-head p.lead { margin: 0 auto; text-align: center; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(47,107,255,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(47,107,255,0.45); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-light);
+    border: 1.5px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+  .btn-block { width: 100%; }
+
+  /* Nav */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+  .logo-mark {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800; color: #fff;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.15s ease; }
+  .nav-links a:hover { color: var(--text-light); }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle { display: none; background: none; border: none; color: var(--text-light); font-size: 1.6rem; cursor: pointer; }
+
+  @media (max-width: 860px) {
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); display: none; }
+    .nav-links.open { display: flex; }
+    .nav-links a { display: block; padding: 16px 24px; border-top: 1px solid var(--border); }
+    .nav-toggle { display: block; }
+    .nav-cta .btn-ghost { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 80px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(47,107,255,0.25), transparent 45%),
+      radial-gradient(circle at 85% 10%, rgba(53,216,224,0.18), transparent 40%),
+      var(--navy-dark);
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    max-width: 780px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 span { background: linear-gradient(135deg, var(--blue), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+  .badges { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 56px; color: var(--text-muted); font-size: 0.9rem; }
+  .badges span { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .badges b { color: var(--cyan); font-size: 1.1rem; }
+
+  /* Services */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+  .card .icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 18px;
+  }
+  .card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 8px; }
+
+  /* Grading */
+  .grading { background: var(--navy); }
+  .grade-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  @media (max-width: 960px) { .grade-row { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grade-row { grid-template-columns: 1fr; } }
+  .grade-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .grade-letter {
+    width: 46px; height: 46px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.2rem; margin: 0 auto 14px;
+  }
+  .grade-A .grade-letter { background: rgba(41,199,111,0.15); color: var(--success); }
+  .grade-B .grade-letter { background: rgba(53,216,224,0.15); color: var(--cyan); }
+  .grade-C .grade-letter { background: rgba(255,184,77,0.15); color: var(--warn); }
+  .grade-D .grade-letter { background: rgba(255,140,66,0.15); color: #ff8c42; }
+  .grade-E .grade-letter { background: rgba(255,92,92,0.15); color: var(--danger); }
+  .grade-card h4 { font-size: 1rem; margin-bottom: 8px; }
+  .grade-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* Why us */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-item { text-align: center; padding: 20px; }
+  .why-item .icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy-light); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin: 0 auto 16px;
+  }
+
+  /* Devices */
+  .devices { background: var(--navy); }
+  .device-chip-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .device-chip {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  /* Sell Form */
+  .sell-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .sell-wrap { grid-template-columns: 1fr; } }
+  .sell-steps { list-style: none; margin-top: 28px; }
+  .sell-steps li { display: flex; gap: 16px; margin-bottom: 26px; }
+  .step-num {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.95rem;
+  }
+  .sell-steps h4 { margin-bottom: 4px; }
+  .sell-steps p { color: var(--text-muted); font-size: 0.92rem; }
+
+  form.quote-form {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 36px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: var(--navy-dark);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 14px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cyan); }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 14px; text-align: center; }
+
+  /* Contact / Footer */
+  footer { background: var(--navy); border-top: 1px solid var(--border); }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+  @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-item h4 { margin-bottom: 8px; color: var(--cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .contact-item p, .contact-item a { color: var(--text-muted); text-decoration: none; font-size: 0.98rem; }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .cta-band {
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  .cta-band h2 { color: #fff; margin-bottom: 10px; }
+  .cta-band p { color: rgba(255,255,255,0.9); max-width: 520px; margin: 0 auto 26px; }
+  .cta-band .btn-primary { background: #fff; color: var(--navy-dark); box-shadow: none; }
+  .cta-band .btn-primary:hover { background: #fff; }
+
+  .hidden-honey { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">
+      <span class="logo-mark">AM</span>
+      Apex Mobile Group
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#grading">Grading Guide</a></li>
+      <li><a href="#devices">Devices</a></li>
+      <li><a href="#sell">Sell Your Phone</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#sell" class="btn btn-ghost">Get a Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="eyebrow">Buy &middot; Sell &middot; Trade</div>
+    <h1>New &amp; used <span>iPhones, Samsung</span> &amp; every grade of phone, A to E</h1>
+    <p class="lead" style="margin:0 auto; text-align:center;">Apex Mobile Group makes buying, selling, and trading in phones simple. Certified grading, fair cash offers, and a full lineup of tested devices &mdash; every grade, every budget.</p>
+    <div class="actions">
+      <a href="#sell" class="btn btn-primary">Get My Cash Offer</a>
+      <a href="#devices" class="btn btn-ghost">Browse Devices</a>
+    </div>
+    <div class="badges">
+      <span><b>A&ndash;E</b> Grading Standard</span>
+      <span><b>24hr</b> Quote Turnaround</span>
+      <span><b>100%</b> Tested &amp; Verified</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>One shop for buying, selling &amp; trading</h2>
+      <p class="lead">Whether you're upgrading, cashing out an old device, or hunting for a deal, Apex Mobile Group handles the whole process.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">&#128241;</div>
+        <h3>Buy New &amp; Used Phones</h3>
+        <p>Shop iPhones, Samsung Galaxy, and more across every condition grade &mdash; from brand new to budget-friendly Grade C/D devices, all fully tested before sale.</p>
+      </div>
+      <div class="card">
+        <div class="icon">&#128176;</div>
+        <h3>Sell Your Phone</h3>
+        <p>Get a fast, fair cash offer for your current device. Submit your phone's details online and we'll respond with a quote within 24 hours.</p>
+      </div>
+      <div class="card">
+        <div class="icon">&#128260;</div>
+        <h3>Trade-In &amp; Upgrade</h3>
+        <p>Put your old phone's value toward your next one. We'll appraise your trade-in and apply it directly to a new or upgraded device.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grading" id="grading">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Know Before You Buy or Sell</div>
+      <h2>Our A&ndash;E grading standard</h2>
+      <p class="lead">Every phone we buy or sell is inspected and assigned a condition grade, so you always know exactly what you're getting &mdash; or what your device is worth.</p>
+    </div>
+    <div class="grade-row">
+      <div class="grade-card grade-A">
+        <div class="grade-letter">A</div>
+        <h4>Excellent</h4>
+        <p>Like-new condition, no visible scratches, fully functional, strong battery health.</p>
+      </div>
+      <div class="grade-card grade-B">
+        <div class="grade-letter">B</div>
+        <h4>Good</h4>
+        <p>Light, minor wear that's barely noticeable in normal use. Fully functional.</p>
+      </div>
+      <div class="grade-card grade-C">
+        <div class="grade-letter">C</div>
+        <h4>Fair</h4>
+        <p>Visible scratches or scuffs on the body or screen. Fully functional, great value.</p>
+      </div>
+      <div class="grade-card grade-D">
+        <div class="grade-letter">D</div>
+        <h4>Worn</h4>
+        <p>Heavier cosmetic wear &mdash; dents, deeper scratches. Still fully functional.</p>
+      </div>
+      <div class="grade-card grade-E">
+        <div class="grade-letter">E</div>
+        <h4>Damaged / Parts</h4>
+        <p>Cracked screen or functional issues. Sold as-is or for parts/repair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why Apex</div>
+      <h2>Trusted by phone buyers &amp; sellers</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon">&#9989;</div>
+        <h4>Transparent Grading</h4>
+        <p style="color:var(--text-muted); font-size:0.9rem;">No surprises &mdash; every phone is graded and disclosed upfront.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">&#9889;</div>
+        <h4>Fast Payouts</h4>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Quoted within 24 hours, paid promptly once your device is verified.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">&#128737;&#65039;</div>
+        <h4>Every Phone Tested</h4>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Full functional inspection before anything goes up for sale.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">&#128179;</div>
+        <h4>Fair Market Pricing</h4>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Competitive offers and prices based on real market value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="devices" id="devices">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">In Stock &amp; Wanted</div>
+      <h2>Devices we buy &amp; sell</h2>
+      <p class="lead">A constantly rotating lineup &mdash; message us for current stock and pricing on any model.</p>
+    </div>
+    <div class="device-chip-grid">
+      <span class="device-chip">iPhone 15 / 15 Pro / 15 Pro Max</span>
+      <span class="device-chip">iPhone 14 / 14 Pro</span>
+      <span class="device-chip">iPhone 13 / 13 Mini</span>
+      <span class="device-chip">iPhone 12 / SE</span>
+      <span class="device-chip">Samsung Galaxy S24 / S23</span>
+      <span class="device-chip">Samsung Galaxy S22 / S21</span>
+      <span class="device-chip">Samsung Galaxy Z Fold / Flip</span>
+      <span class="device-chip">Samsung Galaxy A Series</span>
+      <span class="device-chip">Google Pixel 6&ndash;9</span>
+      <span class="device-chip">iPads &amp; Tablets</span>
+      <span class="device-chip">Other Android Devices</span>
+    </div>
+  </div>
+</section>
+
+<section id="sell">
+  <div class="container">
+    <div class="sell-wrap">
+      <div>
+        <div class="eyebrow">Sell or Trade In</div>
+        <h2>Get a cash offer for your phone</h2>
+        <p class="lead">Tell us about your device below. We'll review the details and follow up with a no-obligation quote.</p>
+        <ul class="sell-steps">
+          <li>
+            <div class="step-num">1</div>
+            <div>
+              <h4>Submit your device info</h4>
+              <p>Brand, model, storage, and condition &mdash; takes under a minute.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div>
+              <h4>Get your quote</h4>
+              <p>We respond by phone or email within 24 hours with a fair cash offer.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div>
+              <h4>Drop off, ship, or trade in</h4>
+              <p>Bring it in, mail it in, or apply the value toward your next device.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="quote-form" action="https://formsubmit.co/hakimiabasin05@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Sell/Trade-In Quote Request — Apex Mobile Group">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hidden-honey" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="Name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone or Email</label>
+            <input type="text" id="phone" name="Contact Info" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="brand">Brand</label>
+            <select id="brand" name="Brand" required>
+              <option value="">Select brand</option>
+              <option>Apple / iPhone</option>
+              <option>Samsung</option>
+              <option>Google Pixel</option>
+              <option>Other Android</option>
+              <option>Other / Tablet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="Model" placeholder="e.g. iPhone 14 Pro, 256GB" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="grade">Estimated Condition</label>
+            <select id="grade" name="Estimated Grade" required>
+              <option value="">Select condition</option>
+              <option>A - Excellent</option>
+              <option>B - Good</option>
+              <option>C - Fair</option>
+              <option>D - Worn</option>
+              <option>E - Damaged / Not Working</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="interest">I'm Interested In</label>
+            <select id="interest" name="Interest" required>
+              <option value="">Select one</option>
+              <option>Selling for Cash</option>
+              <option>Trading In Toward a Purchase</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">Additional Details</label>
+          <textarea id="notes" name="Notes" placeholder="Storage size, carrier, any damage, accessories included, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Request My Quote</button>
+        <p class="form-note">We typically respond within 24 hours. No obligation to sell.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container" style="padding-top:70px;">
+    <div class="cta-band">
+      <h2>Ready to buy, sell, or trade?</h2>
+      <p>Reach out and the Apex Mobile Group team will get back to you fast.</p>
+      <a href="#sell" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h4>Contact</h4>
+        <p><a href="mailto:hakimiabasin05@gmail.com">hakimiabasin05@gmail.com</a></p>
+        <p>Phone: Add your business number</p>
+      </div>
+      <div class="contact-item">
+        <h4>Location</h4>
+        <p>Add your store address or "Serving [City, State]"</p>
+      </div>
+      <div class="contact-item">
+        <h4>Hours</h4>
+        <p>Mon&ndash;Fri: 9am &ndash; 6pm</p>
+        <p>Sat: 10am &ndash; 4pm &nbsp;&middot;&nbsp; Sun: Closed</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Apex Mobile Group. All rights reserved.</span>
+      <span>apexmobilegroup.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { links.classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
